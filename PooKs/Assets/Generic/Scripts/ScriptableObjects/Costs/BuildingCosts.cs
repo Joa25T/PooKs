@@ -1,10 +1,13 @@
-public class Costs
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "Scriptable/Costs/Building Costs")]
+public class BuildingCosts : ScriptableObject
 {
     public int ScrapMetals;
     public int Oxidium;
     public SchematicCost SchematicCosts;
         
-    public Costs(int scrapMetals, int oxidium, SchematicCost schematicCosts)
+    public BuildingCosts(int scrapMetals, int oxidium, SchematicCost schematicCosts)
     {
         ScrapMetals = scrapMetals;
         Oxidium = oxidium;

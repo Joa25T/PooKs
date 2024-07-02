@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,6 +21,7 @@ public class BaseControls : Controls
         basePlayerInputs.Player.Fire.performed -= Interact;
         _buildControls.enabled = true;
         _buildControls.OnCall();
+        
         this.enabled = false;
     }
     

@@ -1,4 +1,7 @@
-public class SchematicCost
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "Scriptable/Costs/Schematic Costs")]
+public class SchematicCost : ScriptableObject
 {
     public int Structural;
     public int Energetic;

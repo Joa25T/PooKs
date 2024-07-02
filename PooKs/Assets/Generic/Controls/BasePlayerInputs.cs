@@ -1377,7 +1377,7 @@ public partial class @BasePlayerInputs: IInputActionCollection2, IDisposable
         public BuildingsActions(@BasePlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Point => m_Wrapper.m_Buildings_Point;
         public InputAction @Navigate => m_Wrapper.m_Buildings_Navigate;
-        public InputAction @Confrim => m_Wrapper.m_Buildings_Confrim;
+        public InputAction Confirm => m_Wrapper.m_Buildings_Confrim;
         public InputActionMap Get() { return m_Wrapper.m_Buildings; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1393,9 +1393,9 @@ public partial class @BasePlayerInputs: IInputActionCollection2, IDisposable
             @Navigate.started += instance.OnNavigate;
             @Navigate.performed += instance.OnNavigate;
             @Navigate.canceled += instance.OnNavigate;
-            @Confrim.started += instance.OnConfrim;
-            @Confrim.performed += instance.OnConfrim;
-            @Confrim.canceled += instance.OnConfrim;
+            Confirm.started += instance.OnConfirm;
+            Confirm.performed += instance.OnConfirm;
+            Confirm.canceled += instance.OnConfirm;
         }
 
         private void UnregisterCallbacks(IBuildingsActions instance)
@@ -1406,9 +1406,9 @@ public partial class @BasePlayerInputs: IInputActionCollection2, IDisposable
             @Navigate.started -= instance.OnNavigate;
             @Navigate.performed -= instance.OnNavigate;
             @Navigate.canceled -= instance.OnNavigate;
-            @Confrim.started -= instance.OnConfrim;
-            @Confrim.performed -= instance.OnConfrim;
-            @Confrim.canceled -= instance.OnConfrim;
+            Confirm.started -= instance.OnConfirm;
+            Confirm.performed -= instance.OnConfirm;
+            Confirm.canceled -= instance.OnConfirm;
         }
 
         public void RemoveCallbacks(IBuildingsActions instance)
@@ -1599,7 +1599,7 @@ public partial class @BasePlayerInputs: IInputActionCollection2, IDisposable
     {
         void OnPoint(InputAction.CallbackContext context);
         void OnNavigate(InputAction.CallbackContext context);
-        void OnConfrim(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,27 +10,25 @@ public class BuildControls : Controls
     private Vector2 _lastMousePos;
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private GameObject _building;
-    [SerializeField] private GameObject _buildingCamera;
     [SerializeField] private LayerMask _ignoreOnMouseRaycast;
+    [SerializeField] private LayerMask _ignoreAllButFloor;
 
     private void OnEnable()
     {
         basePlayerInputs.Buildings.Point.performed += Pointing;
         basePlayerInputs.Buildings.Navigate.performed += Navigating;
-        basePlayerInputs.Buildings.Confrim.performed += Confirm;
+        basePlayerInputs.Buildings.Confirm.performed += Confirm;
         _baseControls = GetComponent<BaseControls>();
-
     }
 
     public void OnCall()
     {
         _building.SetActive(true);
-        _buildingCamera.SetActive(true);
+        EnableBuild();
     }
 
     private void Navigating(InputAction.CallbackContext context)
     {
-        //_basePlayerInputs.Buildings.Point.Disable();
         Vector2 inputDir = context.ReadValue<Vector2>(); 
         
         _building.transform.position = 
@@ -41,28 +40,35 @@ public class BuildControls : Controls
     private void Pointing(InputAction.CallbackContext context)
     {
         Vector2 value = context.ReadValue<Vector2>();
-        if (Vector2.Distance(value, _lastMousePos)< 0.1f)return;
-        _lastMousePos = value;
-        Ray pointHit = _mainCamera.ScreenPointToRay(context.ReadValue<Vector2>());
-        if(Physics.Raycast(pointHit, out RaycastHit hitInfo,200f,_ignoreOnMouseRaycast ))
+        if (Vector3.Distance(value , _lastMousePos) < 0.3f)return;
+        
+        Ray mouseRay = _mainCamera.ScreenPointToRay(value);
+        if (Physics.Raycast(mouseRay, out RaycastHit hitInfo, 200f, _ignoreOnMouseRaycast))
         {
-            if (Vector3.Distance(hitInfo.point,_building.transform.position) < 3) return;
-            
-            _building.transform.position =
-                new Vector3((int)hitInfo.point.x, 
-                    (hitInfo.point.y + 1.5f), 
-                    (int)hitInfo.point.z);
+            _building.transform.position = FloorRefence(hitInfo.point);
         }
+        
     }
 
     private void Confirm(InputAction.CallbackContext context)
     {
-/*        basePlayerInputs.Buildings.Point.performed -= Pointing;
-        basePlayerInputs.Buildings.Navigate.performed -= Navigating;
-        basePlayerInputs.Buildings.Confrim.performed -= Confirm;
-        _buildingCamera.SetActive(false); */
         _baseControls.enabled = true;
         EnablePlayer();
         this.enabled = false;
     }
+
+    private Vector3 FloorRefence(Vector3 point)
+    {
+        Ray centerRay = new Ray(point, Vector3.down);
+        if (Physics.Raycast(centerRay, out RaycastHit hitInfo, 200f, _ignoreAllButFloor))
+        {
+            Vector3 centerPos;
+            centerPos.x = (int)hitInfo.point.x;
+            centerPos.y = (int)hitInfo.point.y;
+            centerPos.z = 0;
+            return centerPos;
+        }
+        return Vector3.zero;
+    }
+    
 }
