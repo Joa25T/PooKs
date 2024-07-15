@@ -15,7 +15,6 @@ public class Controls : MonoBehaviour
 
     protected void EnableRun()
     {
-        _basePlayerInputs.Building.Disable();
         _basePlayerInputs.Hangar.Disable();
         _basePlayerInputs.Run.Enable();
     }
@@ -23,15 +22,7 @@ public class Controls : MonoBehaviour
     protected void EnableHangar()
     {
         _basePlayerInputs.Run.Disable();
-        _basePlayerInputs.Building.Disable();
         _basePlayerInputs.Hangar.Enable();
-    }
-    
-    protected void EnableBuild()
-    {
-        _basePlayerInputs.Run.Disable();
-        _basePlayerInputs.Hangar.Disable();
-        _basePlayerInputs.Building.Enable();
     }
     
 }

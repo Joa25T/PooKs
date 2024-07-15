@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +11,7 @@ public class BuildControls : Controls
     [SerializeField] private GameObject _building;
     [SerializeField] private LayerMask _baseColliderLayer;
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private float _minDistanceBetweenPlatforms = 10;
 
     private void OnEnable()
     {
@@ -29,24 +30,36 @@ public class BuildControls : Controls
 
     public void OnCall()
     {
-        _building = Instantiate(_building);
         EnableBuild();
     }
 
     private void MoveBuilding(InputAction.CallbackContext context)
     {
         Vector2 inputDir = context.ReadValue<Vector2>();
-        _building.transform.position = GroundInfo.NavigatingPosition(inputDir, _building.transform.position, _groundLayer);
+        Debug.Log(inputDir);
+        _building.transform.position = _building.transform.position.AddValue(Axis.X, inputDir.x);
+        if (inputDir.y == 0)
+        {
+            _building.transform.position = _building.transform.position.AddValue(Axis.Y, 1); // raising the raycastpoint a bit, so it doesn't ignore the fist floor its colliding with 
+            _building.transform.position = _building.transform.position.RayHitPosition(_groundLayer, Vector3.down);
+            return;
+        }
+        if (inputDir.y > 0)
+        {
+            _building.transform.position = _building.transform.position.AddValue(Axis.Y, _minDistanceBetweenPlatforms); // raising the raycastpoint above the next platform to hit the top of the collider
+        }
+        _building.transform.position = _building.transform.position.RayHitPosition(_groundLayer, Vector3.down);
+        _building.transform.position = _building.transform.position.Int(Axis.X);
     }
 
     private void PositionWithMouse(InputAction.CallbackContext context)
     {
-        //if(MouseReferences.CheckMouseDisplacement(context, _lastMousePos, .1f))return;
         Vector2 value = context.ReadValue<Vector2>();
         Ray mouseRay = _mainCamera.ScreenPointToRay(value);
         if (Physics.Raycast(mouseRay, out RaycastHit hitInfo, 200f, _baseColliderLayer))
         {
-            _building.transform.position = hitInfo.point.LayerHit(_groundLayer, Vector3.down);
+            _building.transform.position = hitInfo.point.RayHitPosition(_groundLayer, Vector3.down);
+            _building.transform.position = _building.transform.position.Int(Axis.X);
         }
     }
     
@@ -56,4 +69,4 @@ public class BuildControls : Controls
         EnableRun();
         this.enabled = false;
     }
-}
+}*/

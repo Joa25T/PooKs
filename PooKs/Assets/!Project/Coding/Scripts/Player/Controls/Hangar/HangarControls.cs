@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
-public class HangarControls : Controls, IControls
+public class HangarControls : Controls
 {
     private InputAction _moveInput;
     private InputAction _lookInput;

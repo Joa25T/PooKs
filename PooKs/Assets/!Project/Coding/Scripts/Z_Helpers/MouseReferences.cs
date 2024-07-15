@@ -10,7 +10,7 @@ public static class MouseReferences
     /// <param name="Last Mouse Position"></param>
     /// <param name="Minimun Distance"></param>
     /// <returns></returns>
-    public static bool CheckMouseDisplacement(InputAction.CallbackContext context, Vector3 lastMousePos , float minDistance)
+    public static bool CheckMouseDisplacement(this InputAction.CallbackContext context, Vector3 lastMousePos , float minDistance)
     {
         Vector2 value = context.ReadValue<Vector2>();
         float mouseMovedDistance = Vector3.Distance(value, lastMousePos);
