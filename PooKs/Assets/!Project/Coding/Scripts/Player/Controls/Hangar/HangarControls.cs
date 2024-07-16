@@ -1,5 +1,11 @@
+using System;
+using System.Collections;
+using System.Security.Cryptography.X509Certificates;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Update = UnityEngine.PlayerLoop.Update;
 
 [RequireComponent(typeof(Rigidbody))]
 public class HangarControls : Controls
@@ -8,7 +14,13 @@ public class HangarControls : Controls
     private InputAction _lookInput;
     private Rigidbody _rb;
 
+    private Collider _collider;
+    private float XValue => _moveInput.ReadValue<Vector2>().x * (_speed * Time.deltaTime);
+    private float YValue => _moveInput.ReadValue<Vector2>().y * (_speed * Time.deltaTime);
+
     [SerializeField] private float _speed = 500;
+    [SerializeField] private bool _touchingLadder;
+
     private void OnEnable()
     {
         _rb = GetComponent<Rigidbody>();
@@ -20,13 +32,21 @@ public class HangarControls : Controls
         DisableControls();
     }
 
-
-    private void Update()
+    private void FixedUpdate()
     {
-        float XValue = _moveInput.ReadValue<Vector2>().x * (_speed * Time.deltaTime);
         _rb.velocity = _rb.velocity.Switch(Axis.X, XValue);
     }
     
+    private void OnTriggerStay(Collider other)
+    {
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable.IsLadder)
+        {
+            _rb.velocity = _rb.velocity.Switch(Axis.Y, YValue);
+        }
+    }
+
+
     private void HangarFire(InputAction.CallbackContext obj)
     {
         Debug.Log("Hangar fire called");
@@ -70,5 +90,3 @@ public class HangarControls : Controls
         basePlayerInputs.Hangar.HangarFire.Disable();
     }
 }
-
-
