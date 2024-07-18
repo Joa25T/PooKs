@@ -1,11 +1,5 @@
-using System;
-using System.Collections;
-using System.Security.Cryptography.X509Certificates;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Update = UnityEngine.PlayerLoop.Update;
 
 [RequireComponent(typeof(Rigidbody))]
 public class HangarControls : Controls
