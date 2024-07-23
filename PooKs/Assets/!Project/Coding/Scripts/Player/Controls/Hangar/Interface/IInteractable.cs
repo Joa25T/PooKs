@@ -1,6 +1,7 @@
-﻿public interface IInteractable
-{
-    public bool IsLadder { get; }
+﻿using UnityEngine;
 
-    public void OnInteract();
+public interface IInteractable
+{
+    public void OnInteract(float dir, GameObject caller);
+    
 }

@@ -523,7 +523,7 @@ public partial class @BasePlayerInputs: IInputActionCollection2, IDisposable
                     ""id"": ""45bd0221-1882-432e-8202-c13bf08730b5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -1341,7 +1341,7 @@ public partial class @BasePlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""devicePath"": ""<Mouse>"",
-                    ""isOptional"": false,
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -1352,7 +1352,7 @@ public partial class @BasePlayerInputs: IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
