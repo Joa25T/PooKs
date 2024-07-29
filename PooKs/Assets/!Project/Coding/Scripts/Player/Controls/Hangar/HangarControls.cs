@@ -10,7 +10,7 @@ public class HangarControls : MonoBehaviour
     private PlayerInput _playerInput;
     [SerializeField] private float _speed = 500;
     [SerializeField] private float _gravity = 20f;
-    [SerializeField] private float _interactionCooldown = 0.5f;
+    //[SerializeField] private float _interactionCooldown = 0.5f;
 
     private float _moveInputX;
     private float _moveInputY;
