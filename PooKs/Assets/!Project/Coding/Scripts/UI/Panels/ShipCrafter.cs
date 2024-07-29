@@ -4,7 +4,7 @@ public class ShipCrafter : Panel
 {
     public override void OnOpen()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("We chilling");
     }
 
     public override void OnClose()
