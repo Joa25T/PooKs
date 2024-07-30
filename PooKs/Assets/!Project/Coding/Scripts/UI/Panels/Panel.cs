@@ -1,7 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Panel : MonoBehaviour
 {
-    public abstract void OnOpen();
-    public abstract void OnClose();
+    public UnityEvent OnUiOpen;
+    public virtual void OnOpen()
+    {
+        OnUiOpen?.Invoke();
+    }
+
+    public virtual void OnClose()
+    {
+        
+    }
 }

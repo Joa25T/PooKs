@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShipCrafter : Panel
 {
     public override void OnOpen()
     {
-        Debug.Log("We chilling");
+        base.OnOpen();
     }
 
     public override void OnClose()
     {
-        throw new System.NotImplementedException();
+        base.OnClose();
     }
 }
