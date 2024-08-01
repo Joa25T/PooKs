@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4475040275947289864}
   - component: {fileID: 2395625494563730832}
   - component: {fileID: 3489355540122503768}
+  - component: {fileID: 6675001568102864512}
   m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
@@ -33,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 7658758161121831763}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 17.47, y: 0}
+  m_Pivot: {x: 0.49999976, y: 0.5}
 --- !u!222 &2395625494563730832
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -75,6 +76,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6675001568102864512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019669792730162125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56f79e2aa3194349964e89470e2ed68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _targetColor: {r: 1, g: 0.7843138, b: 1, a: 1}
+  _targetImage: {fileID: 3489355540122503768}
 --- !u!1 &4275705640833842337
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +125,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5802450215125241117
 GameObject:
@@ -144,10 +160,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2100155119219641938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 122, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8331399734735351201
 MonoBehaviour:
@@ -161,7 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d62e0a6dec365340a26ef7d3c0b8f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 4678514202306104945}
   _sprite: {fileID: 4134346895175560625, guid: 1a69fa2b1afa0ba46bd55f76fa1b1f1e, type: 3}
   _horizontalLayoutGroup: {fileID: 6006381282016566812}
   _rectTransform: {fileID: 1591102731370085375}
@@ -211,7 +226,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2100155119219641938}
   - component: {fileID: 4678514202306104945}
-  - component: {fileID: 2737354286708010827}
+  - component: {fileID: 278772328916069414}
+  - component: {fileID: 3334018319899456055}
+  - component: {fileID: 7492880779402422905}
+  - component: {fileID: 4040063827493203034}
   m_Layer: 5
   m_Name: Selector
   m_TagString: Untagged
@@ -264,7 +282,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0.78431374, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -280,7 +298,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 3489355540122503768}
+  m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 0}
   m_HandleRect: {fileID: 4475040275947289864}
   m_Direction: 0
@@ -290,8 +308,32 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2737354286708010827
+      m_Calls:
+      - m_Target: {fileID: 278772328916069414}
+        m_TargetAssemblyTypeName: TextChanger, Assembly-CSharp
+        m_MethodName: ChangeText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3334018319899456055}
+        m_TargetAssemblyTypeName: PooKs.UI.SpriteChanger, Assembly-CSharp
+        m_MethodName: SpriteChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &278772328916069414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,6 +342,109 @@ MonoBehaviour:
   m_GameObject: {fileID: 5973907631867947679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 533a46c055875a84f86d9d6f8d893fbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 09f3b906be6f0d049bbd9d0bbcfe8f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tmp: {fileID: 0}
+  _textType: 0
+--- !u!114 &3334018319899456055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973907631867947679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade43adf99438c045983d1ff461077d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetImage: {fileID: 0}
+--- !u!114 &7492880779402422905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973907631867947679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98cc1490a797bb74d8ab51f3956cb4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4040063827493203034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973907631867947679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79ca9450f99e4641a7d5331acadfe28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partChoices:
+  - {fileID: 11400000, guid: 08d8d7970cc1c2f48bd70f748f1512ef, type: 2}
+  - {fileID: 11400000, guid: 93fec7d8e54c320469f1abb9938290cc, type: 2}
+  - {fileID: 11400000, guid: 51bcb5e09a2a87846831ebab3261ac78, type: 2}
+  - {fileID: 11400000, guid: f9f802a00fb43cb46a01e032ebda63b1, type: 2}
+  - {fileID: 11400000, guid: 5312a6475e4a84b468d3bf152bee6bbd, type: 2}
+  _slider: {fileID: 4678514202306104945}
+  OnSetChoices:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3334018319899456055}
+        m_TargetAssemblyTypeName: PooKs.UI.SpriteChanger, Assembly-CSharp
+        m_MethodName: OnSetSprites
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 278772328916069414}
+        m_TargetAssemblyTypeName: PooKs.UI.TextChanger, Assembly-CSharp
+        m_MethodName: OnSetTexts
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSetGraphics:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8331399734735351201}
+        m_TargetAssemblyTypeName: PooKs.UI.SliderGraphicSetter, Assembly-CSharp
+        m_MethodName: OnSetChoices
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLinkChildren:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7492880779402422905}
+        m_TargetAssemblyTypeName: PooKs.UI.SelectLinker, Assembly-CSharp
+        m_MethodName: OnSelectChildren
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

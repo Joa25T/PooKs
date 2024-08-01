@@ -1,31 +1,34 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class VoidEventListener : MonoBehaviour
+namespace PooKs.Events
 {
-    [Header("Listen to Event")] 
-    [SerializeField] private VoidEvent EventChannel;
-    [Tooltip("Actions performed with event call")]
-    [SerializeField] private UnityEvent Response;
-
-    private void OnEnable()
+    public class VoidEventListener : MonoBehaviour
     {
-        if (EventChannel != null)
+        [Header("Listen to Event")] 
+        [SerializeField] private VoidEvent EventChannel;
+        [Tooltip("Actions performed with event call")]
+        [SerializeField] private UnityEvent Response;
+
+        private void OnEnable()
         {
-            EventChannel.OnEventCall += OnEventCall;
+            if (EventChannel != null)
+            {
+                EventChannel.OnEventCall += OnEventCall;
+            }
         }
-    }
 
-    private void OnDisable()
-    {
-        if (EventChannel != null)
+        private void OnDisable()
         {
-            EventChannel.OnEventCall -= OnEventCall;
+            if (EventChannel != null)
+            {
+                EventChannel.OnEventCall -= OnEventCall;
+            }
         }
-    }
 
-    public void OnEventCall()
-    {
-        Response?.Invoke();
+        public void OnEventCall()
+        {
+            Response?.Invoke();
+        }
     }
 }

@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class UI_Manager : MonoBehaviour
+namespace PooKs.UI
 {
-    public void OpenUI(Panel panel)
+    public class UI_Manager : MonoBehaviour
     {
-        panel.gameObject.SetActive(true);
-        panel.OnOpen();
-    }
-
-    public void CloseUI()
-    {
-        Panel[] panels = GetComponentsInChildren<Panel>();
-        foreach (Panel panel in panels)
+        public void OpenUI(Panel panel)
         {
-            panel.gameObject.SetActive(false);
+            panel.gameObject.SetActive(true);
+            panel.OnOpen();
+        }
+
+        public void CloseUI()
+        {
+            Panel[] panels = GetComponentsInChildren<Panel>();
+            foreach (Panel panel in panels)
+            {
+                panel.gameObject.SetActive(false);
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9012320703961840092}
   - component: {fileID: 5096097907104407685}
   - component: {fileID: 4134346895175560625}
+  - component: {fileID: 8725444434616286622}
   m_Layer: 5
   m_Name: SelectorDots
   m_TagString: Untagged
@@ -75,3 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8725444434616286622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254171277971759345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56f79e2aa3194349964e89470e2ed68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _targetColor: {r: 1, g: 0.7843138, b: 1, a: 1}
+  _targetImage: {fileID: 4134346895175560625}

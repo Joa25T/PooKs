@@ -1,16 +1,20 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class Panel : MonoBehaviour
+namespace PooKs.UI
 {
-    public UnityEvent OnUiOpen;
-    public virtual void OnOpen()
+    public abstract class Panel : MonoBehaviour
     {
-        OnUiOpen?.Invoke();
-    }
+        public UnityEvent OnUiOpen;
 
-    public virtual void OnClose()
-    {
-        
+        public virtual void OnOpen()
+        {
+            OnUiOpen?.Invoke();
+        }
+
+        public virtual void OnClose()
+        {
+
+        }
     }
 }

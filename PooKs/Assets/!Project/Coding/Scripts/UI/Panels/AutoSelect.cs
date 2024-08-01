@@ -1,10 +1,20 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class AutoSelect : MonoBehaviour
+namespace PooKs.UI
 {
-    private void OnEnable()
+    public class AutoSelect : MonoBehaviour
     {
-        EventSystem.current.SetSelectedGameObject(this.gameObject);
+        private void OnEnable()
+        {
+            StartCoroutine(SelectThis());
+        }
+
+        private IEnumerator SelectThis()
+        {
+            yield return null;
+            EventSystem.current.SetSelectedGameObject(this.gameObject);
+        }
     }
 }

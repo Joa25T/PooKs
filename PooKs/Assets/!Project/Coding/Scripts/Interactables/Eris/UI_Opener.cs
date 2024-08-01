@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-
+using PooKs.UI;
 public class UI_Opener : MonoBehaviour, IInteractable
 {
     [SerializeField] private Panel _linkedPanel;
