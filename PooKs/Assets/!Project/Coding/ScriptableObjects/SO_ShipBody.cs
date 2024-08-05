@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable/ShipBody")]
-public class ShipBody :  Part
+public class SO_ShipBody :  Part
 {
 
 }
