@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 02-Methis
   m_EditorClassIdentifier: 
   IDNumber: 2
-  Name: Methis
+  Name: METHIS
   Sprite: {fileID: 21300000, guid: 0e16e041e45e2b64bb8ccc5297f084c0, type: 3}
   Description: Do something cool

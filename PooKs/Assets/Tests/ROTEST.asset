@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5946f18b14af5fa4d803ca805af35a83, type: 3}
-  m_Name: 03-Astraios
+  m_Script: {fileID: 11500000, guid: e4d37bc4e35c5e14488d16cf3b0ef8f8, type: 3}
+  m_Name: ROTEST
   m_EditorClassIdentifier: 
-  IDNumber: 3
-  Name: ASTRAIOS
-  Sprite: {fileID: 21300000, guid: cb24c44bac87f7342a8076de166021ab, type: 3}
-  Description: Become Invincible for 1 sec
+  _shipName: 
+  Body: {fileID: 11400000, guid: 08d8d7970cc1c2f48bd70f748f1512ef, type: 2}
+  Weapon: {fileID: 11400000, guid: 8e1b67e5b25d1974ca47ed78846b18af, type: 2}

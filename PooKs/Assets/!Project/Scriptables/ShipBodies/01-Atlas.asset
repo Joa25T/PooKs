@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 01-Atlas
   m_EditorClassIdentifier: 
   IDNumber: 1
-  Name: Atlas
+  Name: ATLAS
   Sprite: {fileID: 21300000, guid: 463e868ac19d7d14ca29043a2049b433, type: 3}
   Description: Create a meteorite infront of you

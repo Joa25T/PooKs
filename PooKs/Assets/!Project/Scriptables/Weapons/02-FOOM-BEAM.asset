@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c63cd0ff446c6c46af2ee67896f92a3, type: 3}
+  m_Name: 02-FOOM-BEAM
+  m_EditorClassIdentifier: 
+  IDNumber: 2
+  Name: FOOM BEAM
+  Sprite: {fileID: 21300000, guid: 7576f764e6101ac4daca2555d745a790, type: 3}
+  Description: A slow charging beam that unleashes a powerful blast that passes through
+    objects, dealing huge amounts of damage.

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 04-Meneoth
   m_EditorClassIdentifier: 
   IDNumber: 4
-  Name: Meneoth
+  Name: MENEOTH
   Sprite: {fileID: 21300000, guid: 5f4e17ee140f15d4a971f3bacb452e20, type: 3}
   Description: Blink to the side

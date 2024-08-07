@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 00-Eos
   m_EditorClassIdentifier: 
   IDNumber: 0
-  Name: Eos
+  Name: EOS
   Sprite: {fileID: 21300000, guid: 0606de37c0503904b9d404b5719ef343, type: 3}
   Description: Create a shield for 1 sec

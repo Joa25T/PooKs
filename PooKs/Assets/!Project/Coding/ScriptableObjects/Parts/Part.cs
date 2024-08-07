@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public abstract class Part : ScriptableObject
+[System.Serializable]
+public abstract class Part : ScriptableObject 
 {
     public int IDNumber; 
     public string Name; 

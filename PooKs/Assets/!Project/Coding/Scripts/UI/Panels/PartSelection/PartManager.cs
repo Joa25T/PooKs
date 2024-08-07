@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PartManager : MonoBehaviour
