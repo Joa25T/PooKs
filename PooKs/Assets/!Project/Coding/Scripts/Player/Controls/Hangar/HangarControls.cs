@@ -10,10 +10,9 @@ public class HangarControls : NetworkBehaviour
     private Rigidbody _rb;
     private PlayerInput _playerInput;
     [SerializeField] private float _speed = 500;
-    [SerializeField] private float _maxSpeed = 25f;
+    //[SerializeField] private float _maxSpeed = 25f;
     [SerializeField] private float _gravity = 20f;
     [SerializeField] [ReadOnlyInspector] private SO_PlayerCharacter _playerCharacter;
-    //[SerializeField] private float _interactionCooldown = 0.5f;
 
     private float _moveInputX;
     private float _moveInputY;
@@ -29,11 +28,11 @@ public class HangarControls : NetworkBehaviour
         AssignPC();
     }
     
-    private void FixedUpdate()
+    private void Update()
     {
-        //transform.position += Vector3.zero.Switch(Axis.X, _moveInputX.SpeedWithDeltaTime(_speed));
+        if(!IsOwner) return;
+        transform.position += Vector3.right * (_moveInputX * _speed * Time.fixedDeltaTime);
         //_rb.AddForce(Vector3.right * (_moveInputX * _speed * Time.fixedDeltaTime));
-        _rb.MovePosition(Vector3.right * (_moveInputX * _speed * Time.fixedDeltaTime));
         _rb.AddForce(Vector3.down * _gravity);
     }
 
