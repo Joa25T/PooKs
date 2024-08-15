@@ -13,17 +13,18 @@ namespace PooKs.UI
         [SerializeField] private HorizontalLayoutGroup _horizontalLayoutGroup;
         [SerializeField] private RectTransform _rectTransform;
         [SerializeField] private RectTransform _handleSlideArea;
+        [SerializeField] private SO_PartsList _partsList;
         [SerializeField] private List<Image> _spriteList;
 
-        public void OnSetChoices(int value)
+        public void OnEnable()
         {
-            SetImages(value);
-            CalculateSpacing(value);
+            SetImages();
+            CalculateSpacing();
         }
 
-        private void SetImages(int value)
+        private void SetImages()
         {
-            int count = value;
+            int count = _partsList.partList.Count;
             while (_spriteList.Count != count)
             {
                 if (_spriteList.Count > count)
@@ -45,10 +46,11 @@ namespace PooKs.UI
             }
         }
 
-        private void CalculateSpacing(int value)
+        private void CalculateSpacing()
         {
+            int count = _partsList.partList.Count;
             _horizontalLayoutGroup.spacing =
-                (_rectTransform.rect.width / value) - _rectTransform.rect.height;
+                (_rectTransform.rect.width / count) - _rectTransform.rect.height;
             _handleSlideArea.sizeDelta = new Vector2(-((_rectTransform.rect.height) + _horizontalLayoutGroup.spacing),
                 0);
         }

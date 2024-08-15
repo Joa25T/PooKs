@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerInput))]
 public class ControlManager : MonoBehaviour
@@ -10,6 +10,23 @@ public class ControlManager : MonoBehaviour
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
+    }
+
+    private void OnEnable()
+    {
+        int sceneID = SceneManager.GetActiveScene().handle;
+        switch (sceneID)
+        {
+            case 0:
+                OnResumeEris();
+                break;
+            case 1:
+                OnResumeRun();
+                break;
+            default:
+                OnResumeEris();
+                break;
+        }
     }
 
     public void OnUIOpen()

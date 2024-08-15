@@ -5,9 +5,9 @@ public class UI_Opener : MonoBehaviour, IInteractable
 {
     [SerializeField] private Panel _linkedPanel;
 
-    public UnityEvent<Panel> OpenPanel;
-    public void OnInteract(float dir, GameObject caller)
+    public UnityEvent<Panel , SO_PlayerCharacter> OpenPanel;
+    public void OnInteract(float dir, SO_PlayerCharacter playerCharacter, Transform playerPos)
     {
-        OpenPanel.Invoke(_linkedPanel);
+        OpenPanel.Invoke(_linkedPanel, playerCharacter);
     }
 }

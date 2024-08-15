@@ -374,17 +374,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d530158d-a0cb-4723-a5a7-e7093a1879a3",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ecd171c4-1fe9-4e5e-8884-53e18ac8e749",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
@@ -787,6 +776,28 @@
                     "action": "HangarMove",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "54485597-efd9-45a5-9847-6f9244db662e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HangarMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "0f8af084-2210-48b0-9e1b-4b2565fee236",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HangarMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1149,6 +1160,28 @@
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "79492ebf-15ad-4faa-a6fb-60eef296866e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "f17c675b-c72d-4de0-8339-ed336c080e87",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

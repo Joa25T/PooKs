@@ -7,7 +7,7 @@ public class Teleporter : MonoBehaviour, IInteractable
     [SerializeField] private List<Teleporter> _connectedTeleporters;
     [Tooltip("The teleporter ID should match the objects number on the list, remember we start at 0")]
     [SerializeField] private int _teleporterID;
-    public void OnInteract(float direction, GameObject caller)
+    public void OnInteract(float direction, SO_PlayerCharacter playerCharacter, Transform playerPosition)
     {
         if (_connectedTeleporters.Count<1) 
         {
@@ -17,6 +17,6 @@ public class Teleporter : MonoBehaviour, IInteractable
         direction = direction == 0 ? 1 : direction;
         int targetTeleporter = _teleporterID + (1 * (int)direction);
         targetTeleporter = targetTeleporter > (_connectedTeleporters.Count-1) ? 0 : targetTeleporter;
-        caller.transform.position = _connectedTeleporters[targetTeleporter].transform.position;
+        playerPosition.position = _connectedTeleporters[targetTeleporter].transform.position;
     }
 }

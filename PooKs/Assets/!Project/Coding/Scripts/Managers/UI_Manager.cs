@@ -4,10 +4,10 @@ namespace PooKs.UI
 {
     public class UI_Manager : MonoBehaviour
     {
-        public void OpenUI(Panel panel)
+        public void OpenUI(Panel panel, SO_PlayerCharacter interactingPC)
         {
             panel.gameObject.SetActive(true);
-            panel.OnOpen();
+            panel.OnOpen(interactingPC);
         }
 
         public void CloseUI()

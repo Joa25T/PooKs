@@ -9,14 +9,18 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2653476365225907414}
+  - component: {fileID: 1277575427872386876}
   - component: {fileID: 4034440751938372822}
+  - component: {fileID: 3002133087934410206}
+  - component: {fileID: 4952194543410147604}
+  - component: {fileID: 3884249566186243474}
   - component: {fileID: 3611773832947692123}
   - component: {fileID: 2266835380681887432}
   - component: {fileID: 8344262536183780761}
   - component: {fileID: 3009248620378314451}
   - component: {fileID: 2852579854457390709}
-  - component: {fileID: 3002133087934410206}
-  - component: {fileID: 4952194543410147604}
+  - component: {fileID: 204088337848610535}
+  - component: {fileID: 4257269195493807076}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -39,6 +43,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1277575427872386876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933318579882417537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3203840233
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &4034440751938372822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,8 +76,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f28a7f0beab4b448405373d922548c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 500
+  _speed: 10
   _gravity: 20
+  _playerCharacter: {fileID: 0}
+  AssignedPC:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: ca37214656554a340b22a76f8af79f51, type: 2}
+        m_TargetAssemblyTypeName: GameEvents`1[[SO_PlayerCharacter, Assembly-CSharp
+        m_MethodName: CallEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3002133087934410206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933318579882417537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9042710f8f2cb4d9608f8b8f8beebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4952194543410147604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933318579882417537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5912c60c0c4c63929185b76c3fc806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventChannel: {fileID: 11400000, guid: 8ba938bb3f5117040ae157bea4b5bc81, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3002133087934410206}
+        m_TargetAssemblyTypeName: ControlManager, Assembly-CSharp
+        m_MethodName: OnUIOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3884249566186243474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933318579882417537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2372834d834fd4fa0dab00c1f69ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventChannel: {fileID: 11400000, guid: 040e21ea006c2384f851a1f8ed08ccab, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3002133087934410206}
+        m_TargetAssemblyTypeName: ControlManager, Assembly-CSharp
+        m_MethodName: OnResumeEris
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3611773832947692123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +265,19 @@ MonoBehaviour:
     m_ActionId: 45bd0221-1882-432e-8202-c13bf08730b5
     m_ActionName: Hangar/HangarInteract[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4034440751938372822}
+        m_TargetAssemblyTypeName: HangarControls, Assembly-CSharp
+        m_MethodName: HangarFire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 788bae8d-d01c-4566-94b7-e43a2b05bf23
     m_ActionName: Hangar/HangarFire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -173,13 +294,13 @@ MonoBehaviour:
     m_ActionName: UI/Submit[/Keyboard/enter]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 11400000, guid: 040e21ea006c2384f851a1f8ed08ccab, type: 2}
+        m_TargetAssemblyTypeName: VoidEvent, Assembly-CSharp
+        m_MethodName: CallEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -215,8 +336,8 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 46978482-44ad-45ef-862d-e84cc928b62b
     m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Hangar
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -318,7 +439,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3002133087934410206
+--- !u!114 &204088337848610535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,10 +448,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933318579882417537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de9042710f8f2cb4d9608f8b8f8beebf, type: 3}
+  m_Script: {fileID: 11500000, guid: c5be45926de77ed4babf955633e72aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4952194543410147604
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 0
+  SlerpPosition: 0
+--- !u!114 &4257269195493807076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -339,22 +479,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933318579882417537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5912c60c0c4c63929185b76c3fc806, type: 3}
+  m_Script: {fileID: 11500000, guid: 584b06f5069321c49aedc9374c2fe475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EventChannel: {fileID: 11400000, guid: 8ba938bb3f5117040ae157bea4b5bc81, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3002133087934410206}
-        m_TargetAssemblyTypeName: ControlManager, Assembly-CSharp
-        m_MethodName: OnUIOpen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

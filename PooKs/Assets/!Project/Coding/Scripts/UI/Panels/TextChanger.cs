@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,38 +7,25 @@ namespace PooKs.UI
 {
     public class TextChanger : MonoBehaviour
     {
-        private enum TextType {name, description}
-        
         [SerializeField] private TextMeshProUGUI _tmp;
-        private List<string> _texts = new List<string>();
+        [SerializeField] private SO_PartsList _partsList;
+        private enum TextType {name, description}
 
-        [SerializeField] private TextType _textType; 
+        [SerializeField] private TextType _textType;
         
-        public void OnSetTexts(List<Part> bodies)
-        {
-            _texts.Clear();
-            switch (_textType)
-            {
-                case TextType.name :
-                    foreach (Part part in bodies)
-                    {
-                        _texts.Add(part.Name);
-                    }
-                    break;
-                case TextType.description :
-                    foreach (Part part in bodies)
-                    {
-                        _texts.Add(part.Description);
-                    }
-                    break;
-            }
-        }
 
         public void ChangeText(float i)
         {
             if (_tmp == null) return;
-            _tmp.text = _texts[(int)i-1]; 
+            switch (_textType)
+            {
+                case TextType.name:
+                    _tmp.text = _partsList.partList[(int)i].Name;
+                    break;
+                case TextType.description:
+                    _tmp.text = _partsList.partList[(int)i].Description;
+                    break;
+            }
         }
     }
 }
-
